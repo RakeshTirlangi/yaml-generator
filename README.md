@@ -168,20 +168,13 @@ st.set_page_config(
 
 ## 📜 License
 
-Distributed under the MIT License. See `LICENSE` for more information.
+Distributed under the IIT License. See `LICENSE` for more information.
 
 ## ✨ Acknowledgements
 
 - [Streamlit](https://streamlit.io/) for the web interface
 - [Google Generative AI](https://ai.google.dev/) for natural language processing
 - [Spheron](https://spheron.network/) for ICL specifications
-
-## 📞 Support
-
-For support:
-- Open an issue in this repository
-- Contact: support@example.com
-- Documentation: [Link to docs]
 
 ## 🛣️ Roadmap
 
