@@ -18,10 +18,9 @@ A conversational AI tool that converts natural language into Spheron Infrastruct
 ## Demo
 ![Alt Text](demo-p.png)
 
-<video width="640" height="360" controls>
-  <source src="demo.mp4" type="video/mp4">
-  Your browser does not support the video tag.
-</video>
+# Video Walkthrough
+
+https://github.com/RakeshTirlangi/yaml-generator/demo.mp4
 
 ## 🛠️ Installation
 
