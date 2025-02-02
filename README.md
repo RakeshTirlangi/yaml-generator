@@ -20,7 +20,7 @@ A conversational AI tool that converts natural language into Spheron Infrastruct
 
 # Video Walkthrough
 
-https://github.com/RakeshTirlangi/yaml-generator/demo.mp4
+[https://github.com/RakeshTirlangi/yaml-generator/demo.mp4](https://github.com/RakeshTirlangi/yaml-generator/blob/main/demo.mp4)
 
 ## 🛠️ Installation
 
