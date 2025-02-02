@@ -58,17 +58,62 @@ Simply describe what you want:
 
 The tool will generate valid YAML:
 ```yaml
-compute:
-  type: "container"
-  runtime: "nodejs"
-  resources:
-    memory: "2GB"
-  scaling:
-    min: 2
-    max: 5
-  healthCheck:
-    path: "/health"
-    interval: "30s"
+documents:
+- apiVersion: apps/v1
+  kind: Deployment
+  metadata:
+    name: node-app-deployment
+  spec:
+    replicas: 3
+    selector:
+      matchLabels:
+        app: node-app
+    template:
+      metadata:
+        labels:
+          app: node-app
+      spec:
+        containers:
+        - image: <your-docker-image-name>:<your-docker-image-tag>
+          livenessProbe:
+            httpGet:
+              path: /healthz
+              port: 3000
+            initialDelaySeconds: 10
+            periodSeconds: 10
+          name: node-app-container
+          ports:
+          - containerPort: 3000
+          readinessProbe:
+            httpGet:
+              path: /ready
+              port: 3000
+            initialDelaySeconds: 5
+            periodSeconds: 5
+          resources:
+            limits:
+              cpu: 500m
+              memory: 512Mi
+            requests:
+              cpu: 100m
+              memory: 256Mi
+        restartPolicy: Always
+- apiVersion: autoscaling/v2beta2
+  kind: HorizontalPodAutoscaler
+  metadata:
+    name: node-app-hpa
+  spec:
+    maxReplicas: 10
+    metrics:
+    - resource:
+        name: cpu
+        targetAverageUtilization: 80
+      type: Resource
+    minReplicas: 1
+    scaleTargetRef:
+      apiVersion: apps/v1
+      kind: Deployment
+      name: node-app-deployment
 ```
 
 ## 🎯 Problem it Solves
