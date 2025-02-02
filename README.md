@@ -15,6 +15,9 @@ A conversational AI tool that converts natural language into Spheron Infrastruct
 - 🔄 Easy configuration refinement
 - 🎨 Modern, user-friendly UI
 
+## Demo
+![Alt Text](demo-p.png)
+
 ## 🛠️ Installation
 
 1. Clone the repository:
